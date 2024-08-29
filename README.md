@@ -15,8 +15,8 @@ This is a Rails 7 application for managing inventory items, featuring real-time 
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+   git clone https://github.com/300bisht/inventory_management
+   cd inventory_management
 
 2. Install Dependencies
 
@@ -33,11 +33,12 @@ This is a Rails 7 application for managing inventory items, featuring real-time 
 
 
 5. bin/rails server
-   rails s   
+   rails s
 
-## how you implemented the real-time features?
+## how I implemented the real-time features?
   - When an inventory item's quantity is updated, Turbo Streams automatically updates all connected clients without requiring a full page reload.
   - I created an InventoryChannel to broadcast changes. When an inventory item's quantity is updated, an ActionCable broadcast sends the new data to all subscribed clients.
   - The app/javascript/channels/inventory_channel.js file handles the subscription to the InventoryChannel and updates the UI with the new quantity.
   - I created a Stimulus controller that interacts with Turbo Streams and updates the UI based on user actions.
+
 
