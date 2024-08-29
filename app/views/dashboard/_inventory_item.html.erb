@@ -1,0 +1,9 @@
+<div id="inventory-item-<%= inventory_item.id %>">
+  <p><strong>Name:</strong> <%= inventory_item.name %></p>
+  <p><strong>Location:</strong> <%= inventory_item.location %></p>
+
+  <%= form_with model: inventory_item, url: inventory_item_path(inventory_item), method: :patch, data: { controller: "inventory-item", action: "turbo:submit-end->inventory-item#resetForm" } do |form| %>
+    <%= form.number_field :quantity, min: 0 %>
+    <%= form.submit "Update Quantity" %>
+  <% end %>
+</div>

@@ -1,0 +1,6 @@
+<h1>Inventory Dashboard</h1>
+
+
+<%= turbo_frame_tag "inventory_items" do %>
+  <%= render partial: 'inventory_item', collection: @inventory_items %>
+<% end %>
